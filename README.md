@@ -2,8 +2,6 @@
 
 This repository accompanies the paper [Deep Learning on a Data Diet: Finding Important Examples Early in Training](TODO) and contains the basic code for replicating the training and computations in it.
 
-For any questions, please email mansheej(at)stanford(dot)edu.
-
 
 
 ## Setup
