@@ -34,10 +34,10 @@ RUN add-apt-repository ppa:deadsnakes/ppa && \
     python3.7 get-pip.py && \
     ln -s /usr/bin/python3.7 /usr/local/bin/python3 && \
     ln -s /usr/bin/python3.7 /usr/local/bin/python && \
-    pip install --upgrade pip && \
+    pip install --upgrade pip==19.0 \
     pip install --upgrade \
-        numpy \
-        scipy \
+        numpy==1.21.6 \
+        scipy==1.7.3 \
         scikit-learn \
         matplotlib \
         seaborn \
@@ -46,9 +46,9 @@ RUN add-apt-repository ppa:deadsnakes/ppa && \
         jupyter \
         tensorflow \
         tensorflow-datasets \
-        jax jaxlib==0.1.65+cuda110 -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html \
+        jax==0.1.68 jaxlib==0.1.52+cuda110 -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html \
         neural-tangents \
-        flax \
+        flax==0.2 \
         && \
     apt-get clean && \
     apt-get autoremove && \
