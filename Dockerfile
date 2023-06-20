@@ -1,4 +1,4 @@
-FROM nvcr.io/nvidia/cuda:11.0-cudnn8-devel-ubuntu18.04
+FROM nvcr.io/nvidia/cuda:11.0.3-cudnn8-devel-ubuntu18.04
 
 RUN apt-get update && \
     DEBIAN_FRONTEND=DEBIAN_FRONTEND=noninteractive apt-get install -y \
@@ -27,6 +27,7 @@ RUN add-apt-repository ppa:deadsnakes/ppa && \
     DEBIAN_FRONTEND=DEBIAN_FRONTEND=noninteractive apt-get install -y \
         python3.7 \
         python3.7-dev \
+        python3-distutils \
         && \
     rm -rf /var/lib/apt/lists/* && \
     curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
@@ -43,9 +44,9 @@ RUN add-apt-repository ppa:deadsnakes/ppa && \
         tqdm \
         Cython \
         jupyter \
-        tensorflow-gpu \
+        tensorflow \
         tensorflow-datasets \
-        jax jaxlib==0.1.65+cuda110 -f https://storage.googleapis.com/jax-releases/jax_releases.html \
+        jax jaxlib==0.1.65+cuda110 -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html \
         neural-tangents \
         flax \
         && \
